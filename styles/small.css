@@ -22,7 +22,7 @@ body {
 ----------------------------------------*/
 #header {
   background: #FFFFFF url(../images/bg-kihei.png) repeat scroll left top;
-  height: 100px;
+  height: 100%;
 }
 #logo {
   padding: 0;
@@ -40,7 +40,7 @@ margin-top: -20px;
 #slogan {
 //float: right;
   font-size: 1em;
-  padding: 1em 0 0 0 0;
+  padding: 1em 0 0 0;
 //margin-top: 40px;
   margin-right: 0;
 //color: rgba(255, 255, 255, 0.8);
@@ -51,22 +51,19 @@ margin-top: -20px;
 ----------------------------------------*/
 #menu {
   background: rgba(100, 100, 100, .8);
-  margin-top: 0.5em;
+  margin-top: 0.7em;
 }
 #menu ul {
   margin-left: 5%;
-  padding: 0.3em 0;
+  padding: .6em 0;
 }
 #menu a {
 }
 #menu li {
-  padding: 0;
-  padding-right: 1em;
+  padding: 0 1em 0 0;
 }
 #menu li a {
-//  color: #d0d0d0;
   padding-bottom: 0.1em;
-//  text-decoration: none;
 }
 #menu a:hover {
   text-decoration: none;
@@ -91,20 +88,19 @@ visibility:hidden;
 #bio {
   font-family: Georgia, serif;
   line-height: 1.5;
-  font-size: 110%;
-  float: right;
-  width: 20%;
-  margin-top: 2em; margin-right: 5%;
+  font-size: 80%;
+  float: none;
+  width: 90%;
+  margin: 2em 5% 0 5%;
   color: rgba(0, 0, 0, 0.6);
 }
 
 /*
 ----------------------------------------*/
 #sidebar {
-  float: right;
-  width: 20%;
-  margin-top: 2em; margin-right: 5%;
-  margin-bottom: 3em;
+  float: none;
+  width: 90%;
+  margin: 2em 5% 3em 5%;
   border: 2px solid #d0d0d0;
   -moz-border-radius: 5px;
   color: rgba(0, 0, 0, 0.8);
@@ -113,13 +109,13 @@ visibility:hidden;
   padding: 0 0 0.5em 0;
 }
 #sidebar dt {
-  font-size: 110%;
-  padding: 0 1em;
-  margin-bottom: 0.5em;
+  font-size: 100%;
+  padding: .5em 1em .5em 1em;
+  margin: 0 0 0.5em 0;
   background: #d0d0d0;
 }
 #sidebar dd {
-  padding: 0 1em;
+  padding: 0 1.5em;
 }
 
 /*
@@ -182,33 +178,30 @@ visibility:hidden;
 /*
 ----------------------------------------*/
 #extra {
-  padding: 3em 3em;
+  padding: 20px 3em;
   clear: both;
   background: rgba(155, 152, 109, 0.16);
+  background: url(../images/seawater.png) repeat;
+  height: 77px;
 }
 #extra div {
-	height: 3em;
+  height: 3em;
 }
 #extra ul {
   list-style: none;
 }
 #extra li {
-  padding-right: 1em;
+  padding-right: 2em;
   float: left;
 }
 
-/*
-----------------------------------------*/
-#footer {
-}
-
 #legal {
-	clear: both;
-	padding: 10px 0;
+  clear: both;
+  padding: 10px 0;
   font-size: 0.8em;
-	text-align: center;
-	color: #375C69;
+  text-align: center;
+  color: #375C69;
 }
 #legal a {
-	color: #476B77;
+  color: #476B77;
 }
