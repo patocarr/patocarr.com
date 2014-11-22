@@ -149,11 +149,16 @@ visibility:hidden;
   font-size: 100%;
   color: rgba(0, 0, 0, 0.9);
 }
+#entries h1 {
+  font-family: sans-serif;
+  font-size: 160%;
+  margin: 0 0 0 0;
+}
 #entries h2 {
   text-decoration: bold;
   font-family: Georgia, serif;
-  font-size: 150%;
-  margin: 0 0 0 0;
+  font-size: 130%;
+  margin: 0.5em 0 0 0;
 }
 #entries h3 {
   text-decoration: bold;
