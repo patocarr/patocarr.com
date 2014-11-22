@@ -38,8 +38,8 @@ body {
 #slogan {
   float: right;
   font-size: 1.6em;
-  padding: 0.4em;
-  margin-right: 2em;
+  padding: 0.4em 0 0.4em 0.4em;
+  margin-right: 5%;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -144,7 +144,7 @@ visibility:hidden;
 ----------------------------------------*/
 #entries {
   float: left;
-  width: 68%;
+  width: 65%;
   margin: 2em 2% 2em 3em;
   font-size: 100%;
   color: rgba(0, 0, 0, 0.9);
@@ -153,6 +153,12 @@ visibility:hidden;
   text-decoration: bold;
   font-family: Georgia, serif;
   font-size: 150%;
+  margin: 0 0 0 0;
+}
+#entries h3 {
+  text-decoration: bold;
+  font-family: Georgia, serif;
+  font-size: 120%;
   margin: 1em 0 0 0;
 }
 #entries h4 {
