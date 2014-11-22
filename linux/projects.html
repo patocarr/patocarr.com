@@ -1,0 +1,273 @@
+---
+layout: linux
+title: Proyectos
+---
+
+<h2>Projects</h2>
+
+<p>No es demasiado a menudo que me embarco en proyectos de programaci&oacute;n. 
+La mayor&iacute;a de las veces surge de tener que solucionar algun asunto, 
+(de rascar adonde pica) que me lleva a investigar como se puede hacer.
+Nada nuevo, siempre hay alguien que lo hizo antes de algun otro modo,
+sin embargo la investigaci&oacute;n de como fue hecho, ya es un aprendizaje importantisimo. Y si finalmente surge codigo propio... un avance personal.</p>
+
+<h3>Picasa -> xml -> ruby => Generador de p&aacute;ginas web</h3>
+<p>Google Picasa exporta a paginas web y a formato xml, y hace unos dias lo port&oacute; a Linux usando las bibliotecas de Wine. Excelente programa para edicion[light] y administracion de colecciones de imagenes.<br />
+El archivo xml contiene la coleccion de archivos, thumbnails, tama&ntilde;os, captions, etc.<br />
+El generador que me propuse escribir <i>parses</i> el xml y genera paginas basadas en templates. El primer template contiene el indice del album, con todos los thumbnails. El segundo template contiene el formato de cada thumbnail y el tercero la pagina individual de cada imagen. Por ejemplo, el template de los thumbnails ser&iacute;a algo asi: 
+<pre>
+  &lt;div class="thumbnail"&gt; &lt;a href='__target__'&gt;
+  &lt;img src='__itemThumbnailImage__' style='border:0' alt;='' width='__itemThumbnailWidth__' height='__itemThumbnailHeight__' /&gt; &lt;/a&gt;
+    &lt;div class="name"&gt;__itemName__&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+El script ruby entonces reemplaza los <i>tokens</i> con el contenido del archivo xml.
+Cabe se&ntilde;alar que despues de probar mi versi&oacute;n proof-of-concept, decid&iacute; basarla en partes de la class PicasaAlbumHelper de <a href="http://www.hackerdude.com/">Hackerdude</a> que tiene una Creative Commons Atribution license.<br />
+Para ver un ejemplo del album generado, visite mi album de la <a href="http://patocarr.no-ip.org/SCALE05/">Southern California Linux Expo 2005</a><br />
+<a href="thumbs.tgz">Sources</a>
+</p>
+<h3>Estado del tiempo, Awk & Bash</h3>
+<p>Estoy haciendo un programita basado en <a href="http://www.gnu.org/software/gawk/gawk.html">awk</a> para embellecer c&oacute;digo vhdl. Es la primera vez que me pongo a estudiar awk, y realmente no es dificil y es bastante poderoso para ser usado como filtro. <br />
+<i>Cuidado, cuando uno anda con un martillo en la mano, de repente todo parece clavo.</i><br />
+Encontr&eacute; una p&aacute;gina que d&aacute;ndole tu zip code, te devuelve <a href="http://weather.unisys.com/forexml.cgi?91367"> informaci&oacute;n sobre el tiempo y un mini pron&oacute;stico</a>. Con un poco de awk se puede convertir en algo &uacute;til.<br />
+
+<a href="http://directory.fsf.org/vid/view/XawTV.html">Webcam</a> es el programa que captura las imagenes del webcam y las pone en un archivo .jpeg, en el directorio del web server.
+Webcam puede leer un archivo de texto y agreg&aacute;rselo como subt&iacute;tulo a la imagen. Este archivo va a tener mi localidad, la fecha y hora y la temperatura actual.
+<pre>
+#!/bin/bash
+TMPFILE=/tmp/temp.xml
+TMPCAPTION=/tmp/tmpcaption
+CAPTION=/tmp/caption
+I=0
+while (true) do
+    if [ "1800" -eq $I ]; then
+        wget -O $TMPFILE http://weather.unisys.com/forexml.cgi?91367
+        I=0
+    fi
+    I=$(($I + 1))
+
+    # separate 'city="Woodland Hills, CA"' by ", and take 2nd
+    awk 'BEGIN {FS="\""}/city/{print $2}' $TMPFILE &gt; $TMPCAPTION
+
+    # handpick 'Tue Jan 17 23:42:48 PST 2006'
+    date|awk '{print $2 " " $3 " " $4 " " $5}'&gt;&gt; TMPCAPTION
+
+    # now the temp
+    awk 'BEGIN {FS="\""}/temp.string/{print $2}' $TMPFILE &gt;&gt; $TMPCAPTION
+
+    # join all three lines
+    cat $TMPCAPTION|awk 'BEGIN{RS="";FS="\n"}{print $1 " " $2 " " $3}'&gt;$TMPCAPTION
+
+    cp $TMPCAPTION $CAPTION
+    sleep 1
+done
+</pre>
+La <a href="http://patocarr.no-ip.org/webcam.jpeg">imagen con subt&iacute;tulo</a> se puede ver tambien en la p&aacute;gina principal
+</p>
+<h3>Jugando con pygtk</h3>
+<p>Hace un tiempo ya que tengo una webcam mirando hacia afuera de mi depto y junto con un web server corriendo en mi maquina, puedo generar imagenes cada segundo y ponerlas online. Lo que necesitaba era una ventanita que me mostrara la imagen actual del webcam, que se actualice cada segundo y que me diga si alguien est&aacute; viendo el website desde afuera. Asi es que con un par de horas de hacking con pygtk logr&eacute; lo siguiente: <a href="images.tgz">images.py</a></p>
+<br />
+<img style="text-align: center" src="webcam1.png" alt="webcam windowshot"/>
+<br />
+<small>Shot del script en acci&oacute;n</small>
+<h3>Enderezador de fotos digitales</h3>
+<p>Encontr&eacute; un viejo script perl que us&eacute; para enderezar fotos digitales basado en la informaci&oacute;n <acronym title="EXchangeable Image File">EXIF</acronym> que le agrega la c&aacute;mara digital. 
+Esta info tiene entre otras cosas, shutter speed, apertura y orientaci&oacute;n.
+Este script necesita algunas tools de <a href="http://www.imagemagick.com">ImageMagick</a> como mogrify e identify.<br />
+El c&oacute;digo esta protegido por la Licencia General GNU y disponible para download: <a type="text/css" href="standup.tar.gz">standup.pl</a></p>
+<h3>Nuevo Theme para el <b>album</b></h3>
+<p>Una nueva actualizaci&oacute;n al viejo SlideCSS, que ahora se llama FrameCSS. Cuenta con una sola imagen .gif transparente, y el thumbnail se centra con codigo CSS (padding).<br />
+El theme fue aceptado por el autor del <a href="http://marginalhacks.com/Hacks/album/">album</a> y lo incluy&oacute; en su <a href="http://marginalhacks.com/Hacks/album/Themes.html">listado de themes!</a> con el viejo nombre.<br />
+Lo puedes bajar en un tgz: <a href="http://patocarr.com/Themes/FrameCSS.tgz">FrameCSS</a><br />
+Este software se encuentra protegido por la Licencia General GNU
+</p>
+
+<h3>RedHat/Fedora Samba configuration tool</h3>
+<p>Navegando por <a href="http://bugzilla.redhat.com">Bugzilla</a>, encontre un programa de RedHat/Fedora, que sirve para configurar un servidor Samba, que ten&iacute;a algunos problemitas. Me puse a investigar al respecto, y descubr&iacute; que el script python daba unos warnings debido a unos m&eacute;todos que fueron mejorados en pygtk, pero no en el script. El mensaje de warning era algo asi:</p>
+<pre>/usr/share/system-config-samba/mainWindow.py:116: DeprecationWarning: use gtk.UIManager
+  item_fac = gtk.ItemFactory(gtk.MenuBar, "&lt;main&gt;", accel_group)
+/usr/share/system-config-samba/mainWindow.py:141: DeprecationWarning:
+  button = self.toolbar.insert_stock('gtk-add', _("Add a samba share"), None, self.onNewButtonClicked, None, 0)
+snip</pre>
+<p>Al cabo de un par de horas de <i>hacking</i> con pygtk, arregl&eacute; el problema y ahora no tira mas warnings! El <a href="http://patocarr.com/mainWindow.patch">patch</a> fue enviado al mantenedor del paquete (Nils Philippsen) para su incorporaci&oacute;n.
+[Update] El patch ya esta en CVS!</p>
+
+<h3>Picblog</h3>
+<p>Al descubrir la potencia de un lenguaje orientado a objetos relativamente nuevo llamado <a href="http://www.ruby-lang.org/en/">Ruby</a>, me propuse hacer un proyecto para poder mandar las fotos desde mi celular, directamente a mi <a href="../picblog/index.html">homepage</a>.<br />
+Desde el celular, mando una foto a mi direccion de email. Este script se ejecuta en mi maquina y cada unos 10 minutos chequea mi email y extrae los que fueron enviados por mi celular. Luego se conecta a mi website y sube las fotos recogidas.<br /></p>
+<p>Screenshot ;-)</p>
+<pre>
+Trying pop.1and1.com...
+Connected
+Downloading 5 mails...
+Pat Carr
+818*****48@tmomail.net
+Got one pic-email! Tue, 6 Jul 2004 00:32:13 -0700 (PDT)
+Got pic!: Footer text
+Marcelo Ramos
+quake-all-owner@eqinfo.wr.usgs.gov
+818*****48@tmomail.net
+Got one pic-email! Sun, 11 Jul 2004 02:38:47 -0700 (PDT)
+Got pic!: Grocery shopping
+5 mails popped.
+Trying to ftp to patocarr.com
+Logging in...
+Logged in
+Uploading inbox/Tue,_6_Jul_2004_00:32:13_-0700__PDT_.jpg
+Uploading inbox/Sun,_11_Jul_2004_02:38:47_-0700__PDT_.jpg
+Done.
+Sun Jul 11 13:24:46 PDT 2004: Sleeping 10 minutes...
+</pre>
+<p><a href="../picblog/picblog.rb">PicBlog.rb</a> esta disponible para download, y esta protegido por la Licencia General GNU</p>
+
+<h3>Theme para el <b>album</b></h3>
+
+<p><a href="http://marginalhacks.com/Hacks/album/">Album</a> es un script escrito en perl para generar galerias de imagenes 
+para poner online. Con la ayuda de album es que hice las galerias que se ven
+en este website. Al principio, el 'theme' de las galerias no tenia mucho
+que ver con el diseno general de la pagina, asi que quise modificar los 
+colores y el layout general para que concuerde mejor. Me gusto la idea 
+que tome del <a href="http://gthumb.sourceforge.net/">gThumb</a> que los
+ thumbnails sean enmarcados como si fuese una 
+diapositiva, pero no pude encontrar un theme para el album que hiciera
+eso, aunque hay varios temas <a href="http://davepics.com/Theme_Album/">
+disponibles</a>. Asi que me dispuse a disenar el mio. Basado en un theme
+ya escrito por Helmar Wieland llamado Floating, que usa CSS en lugar de 
+tablas para el layout, es que base el SlideCSS. </p>
+<p>Para instalar este theme y generar un album con las imagenes contenidas
+en el directorio gallery_dir</p>
+<pre>
+[user@host]$ mkdir Themes
+[user@host]$ cd Themes
+[user@host]$ tar xvfz SlideCSS.tgz
+[user@host]$ cd ..
+[user@host]$ album -theme Themes/SlideCSS gallery_dir
+</pre>
+<p><a href="http://patocarr.com/Themes/SlideCSS.tgz">SlideCSS</a> esta disponible para download, y esta protegido por la Licencia 
+General GNU</p>
+
+<h3>Pwiki</h3>
+
+<p>Mi implementacion de un Wiki escrito en Perl. Que es un Wiki? es una
+herramienta que permite trabajar concurrentemente sobre uno o varios
+documentos. El Wiki original fue escrito por Ward Cunningham y la <a
+href="http://c2.com/cgi/wiki">version original</a> esta todavia en linea.
+Existen cientos de implementaciones de Wiki, escritas en C, php, C++, java y
+varios lenguajes mas. Elegi escribirlo en Perl por ser uno de los lenguajes
+mas populares para escribir programas CGI y por ser uno de los que mas uso
+habitualmente.</p>
+
+<p>Y para que escribir *otro* Wiki mas? primero que todo, para aprender! una
+de las razones principales fue que queria tener la posibilidad de agregar
+imagenes y los Wikis que lo hacen son muy grandes. En fin, queria aprender,
+que sea algo chico y portable, que permita agregar imagenes y que sea
+'seguro' para el servidor adonde reside.</p>
+
+<p>Pwiki esta protegido por la Licencia Publica de GNU: <a
+href="http://www.gnu.org/licenses/gpl.txt">GPL</a>. Esto te permite modificar
+el codigo original libremente, y me libra de toda responsibilidad debido a su
+uso.</p>
+
+<p>Caracteristicas:</p>
+<ul>
+  <li>Permite upload de imagenes</li>
+  <li>CVS backend para manejo de concurrencia</li>
+  <li>100% Perl, usando la libreria CGI</li>
+  <li>Genera codigo XHTML 1.0 Transitional</li>
+  <li>Por seguridad, no permite codigo HTML</li>
+  <li>Facil de instalar</li>
+</ul>
+
+<p>El codigo fuente esta <a
+href="http://www.patocarr.com/cgi-bin/pwiki.pl?self">disponible</a> "inline",
+lo que significa que el propio programa entrega su codigo al pasarle el
+parametro 'self'.</p>
+
+<p>Para verlo en funcionamiento, visita la <a
+href="http://www.patocarr.com/cgi-bin/pwiki.pl?PrimerPagina">PrimerPagina</a>,
+adonde se explica otro poco sobre como usarlo. Marcelo (xanthus) Ramos preparo un <a href="http://patocarr.com/cgi-bin/pwiki.pl?PwikiInstalacion">HowIdidIt</a> de la instalacion paso por paso. Gracias xanthus!</p>
+
+<h3>IPsaver</h3>
+
+<p>Mart&iacute;n es un usuario m&aacute;s de un servicio de internet de broadband o banda ancha, mas comunmente llamado ADSL (Asymmetric Digital Subscriber Line o subscripcion de linea digital asimetrica). Normalmente, estos servicios le otorgan al usuario de un IP dinamico (una direccion digital unica en el internet), una direccion que cambia en cada nueva conexion.<br />
+Su necesidad se basa en que &eacute;l esta ejecutando algun tipo de servidor en su computador (ssh, http, ftp) y necesita accederlo desde otra computadora en otro lugar, por ejemplo desde la casa de su amigo. Como el IP de su conexion cambia, es imposible saber que direccion tendra. La solucion es un peque&ntilde;o script que desde su maquina le dice a un servidor conocido de su IP. El servidor almacena el IP y ahora esa direccion se encuentra accesible al internet.<br />
+
+Este script podria reemplazar a <a href="http://www.dyndns.com">dyndns</a>, pero no actualiza dns, solamente devuelve el IP guardado previamente</p>
+
+<pre>wget http://mi-servidor-estatico.com/cgi-bin/ipsaver.pl?username=192.168.0.2</pre>
+
+<p>De esta manera, el IP se almacena en el servidor y esta disponible para
+accederse desde cualquier otro lugar, y desde cualquier browser, como:</p>
+
+<pre>http://mi-servidor-estatico.com/cgi-bin/ipsaver.pl?username</pre>
+
+<p>Retornara el IP almacenado previamente: 192.168.0.2</p>
+
+<p>Para instalarlo, es necesario tener, como minimo, acceso ftp al server http.
+En la instalacion se debe poner el script en un directorio ejecutable (p.ej. /cgi-bin) y setear sus permisos de ejecucion. <br />
+<b>Muy importante</b> es modificar el script para que apunte al directorio de datos del servidor (linea 22), adonde 
+es necesario crear un archivo, con el nombre <b>ipfile</b>. Debe tener permiso de escritura (chmod 666 ipfile).</p>
+<p>Vea su <a href="http://patocarr.com/cgi-bin/ipsaver.pl?self">c&oacute;digo fuente</a></p>
+<small>Este script esta protegido por la Licencia Publica General de <a href="http://www.gnu.org/licenses/gpl.txt">GNU</a>.</small>
+
+
+<h3>Proyecto CDROM de Software Libre</h3>
+<p>"En Argentina, particularmente en las universidades, aun no se ha tomado conciencia de la implicacion que conlleva el uso de software propietario dentro de las mismas, tanto en materia economica como en materia de independencia tecnologica.
+La aparicion del software libre nos abrio un nuevo horizonte en lo que respecta a lo que se venia pensando hasta el momento, por razones coyunturales, de lo que significaba el software en una computadora.
+Es la idea de este trabajo dar una breve introduccion sobre las ventajas y desventajas del software libre dentro de la universidad.
+Se trato de ser lo mas coloquial posible como asi tambien dar ejemplos concretos de lo que aqui se enuncia.
+No nos adentraremos a explicar la definicion de lo que es y no es software libre.
+Eso queda fuera de este trabajo y se pueden encontrar articulos interesantes en la web que hablan al respecto.
+En compa&ntilde;ia de este articulo viene un cdrom con una amplia gama de productos bajo esta nueva filosofia para la plataforma Windows, invitando inmediatamente a quien lo desee a probarlos."</p>
+<p><a href="http://www.ar-politecnicounr.net/cdrom">Acceso</a> en linea del proyecto</p>
+
+
+<h3>Minibox: Minidistro en diskette - Por Marcelo Ramos</h3>
+
+<p>El tema de la creacion de minidistribuciones en diskette es fascinante 
+para mi y siempre quise empezar a investigar el tema. Minibox 0.1 
+es el resultado de mi primer intento :)</p>
+
+<p>Est&aacute; creado con <a href="http://www.busybox.net">Busybox</a> y <a href="http://tinylogin.busybox.net">Tinylogin</a> los cuales usan la biblioteca <a href="http://www.uclibc.org">uClibc</a> 
+</p>
+
+<p>Minibox 0.1 no es realmente &uacute;til, es s&oacute;lo un experimento. Con el tiempo
+tal vez se me ocurran ideas para crear a partir de Minibox algo 
+realmente &uacute;til 
+</p>
+
+<a href="minibox.jpg"><img src="minibox_s.jpg" alt="vnc" width="120" height="90" /></a> <br />
+<small>La im&aacute;gen muestra a Minibox corriendo dentro de <a href="http://patocarr.com/linux/bochs.sourceforge.net">Bochs</a> en una de mis consolas (Debian Sid).</small>
+
+<p>Sugerencias e ideas bienvenidas: <a href="mailto://mramos@SACARmontevideo.com.uy">mramos(a)montevideo.com.uy</a> (borrar el 'SACAR' antes de enviar!)
+</p>
+
+<h3>Camserv</h3>
+
+<p>En mi caso, el &uacute;nico hasta el momento, encontr&eacute; un programa que
+captura imagenes en tiempo real desde la webcam y crea un servidor de
+imagenes (mjpeg) adonde cualquiera puede conectarse y 'ver' lo que mi c&aacute;mara
+esta viendo. Todo muy lindo, excepto que mi c&aacute;mara no respond&iacute;a como yo
+quer&iacute;a. Me mostraba una imagen cortada al medio, blanco y negro y la parte
+superior era tres mini-imagenes de la camara. Una cagada.<br />
+Despues de un par de dias de probar configuraciones y leer interminables
+threads de mailing lists, decidi inspeccionar y ver que era lo que estaba
+*tan* mal con mi equipo. Me puse a mirar el source code, el programita
+propiamente dicho en C.<br />
+Unos dias mas y muchas horas de lectura y experimentos, me llevaron a la
+conclusion que mi programa estaba poniendo las imagenes en linea exactamente
+como salian de la camara, en formato YUV, cuando el programa las esperaba en
+RGB. Por eso la distorsion. En fin, encontre en otro programa del mismo
+estilo una subrutina para cambiar de YUV a RGB y la implemente (desde C++) en
+el source code. Y algunas horas mas tarde estaba funcionando! Mi propio hack
+a un programa en C bajo Linux!<br />
+Con esto no quiero decir que cada uno que algo no le funcione se pase las
+horas que yo me pase para arreglarlo! Solo que es posible hacerlo.<br />
+El programita del que hablo es el <a
+href="http://cserv.sourceforge.net">Camserv</a> V.0.5.0, escrito por Jon
+Travis, un video stream server a traves del web. Una herramienta muy util que
+sol&iacute;a usar frecuentemente en la seccion <a href="http://patocarr.com/linux/realtime.html">Realtime from home</a>. El programa, como todo servidor, no es gr&aacute;fico y solo tiene un
+archivo de configuracion, en su mayoria facil de entender. Tiempo despues de
+modificar el programa, encontre otra version con la correccion que yo le
+hice, y la ultima version ya lo incluye.</p>
+

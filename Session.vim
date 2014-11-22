@@ -8,6 +8,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set background=dark
 set backspace=indent,eol,start
+set expandtab
 set fileencodings=ucs-bom,utf-8,latin1
 set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175,a:blinkon0,a:blinkon0
 set guifont=Monospace\ 12
@@ -26,11 +27,28 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 index.html
+badd +5 blog.html
+badd +17 _layouts/linux.html
+badd +17 _posts/2014-11-11-welcome-to-jekyll.markdown
+badd +4 ~/Documents/patocarr_test/index.html
+badd +13 _includes/head.html
+badd +13 _config.yml
+badd +2 _includes/footer.html
+badd +10 _includes/header.html
+badd +164 styles/style.css
+badd +1 index.html
+badd +5 _includes/linux.html
+badd +5 linux/index.html
+badd +29 _includes/extra.html
+badd +1 _includes/sidebar.html
+badd +1 _includes/bio.html
+badd +1 _layouts/default.html
+badd +1 linux/qlinux.html
+badd +1 linux/news.html
 argglobal
 silent! argdel *
-argadd index.html
-edit index.html
+argadd linux/news.html
+edit linux/news.html
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -69,7 +87,7 @@ setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal noexpandtab
+setlocal expandtab
 if &filetype != 'html'
 setlocal filetype=html
 endif
@@ -87,8 +105,8 @@ setlocal formatexpr=
 setlocal formatoptions=tcq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=2
-setlocal imsearch=2
+setlocal iminsert=0
+setlocal imsearch=0
 setlocal include=
 setlocal includeexpr=
 setlocal indentexpr=
@@ -143,12 +161,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 19 - ((16 * winheight(0) + 23) / 46)
+let s:l = 9 - ((8 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 07|
+9
+normal! 031|
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

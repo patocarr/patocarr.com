@@ -1,0 +1,206 @@
+---
+layout: linux
+title: Que es Linux?
+---
+
+
+<h2>Novedades</h2>
+
+        <h3>2006/06/08 - Picasa</h3>
+        <p>
+        Google acaba de lanzar su versi&oacute;n de <a href="http://picasa.google.com/">Picasa para Linux</a>. 
+Aunque no es c&oacute;digo linux nativo, sino portado gracias a Wine, corre muy bien. 
+Quiz&aacute;s un poco lento a veces, aunque puede ser la cantidad de fotos que poseo que lo enlentezca (m&aacute;s de 6 mil).
+Picasa puede exportar a p&aacute;ginas web y a un archivo xml. 
+Las p&aacute;ginas que genera son un tanto mon&oacute;tonas y son s&oacute;lo cuatro templates. 
+El motor de templating que tiene parece ser muy poderoso, cosa que descubr&iacute; tarde, una vez empezado mi <a href="projects.html">generador de p&aacute;ginas propio en Ruby.</a><br />
+
+
+		<h3>01/06 - HD Externo Western Digital USB 2.0</h3>
+		<p>
+		El nuevo chiche que consegui para hacer back-ups de cosas que no me gustaria perder, como fotos, videos, websites, musica y otros archivos varios. Es impresionante el volumen de cosas que uno termina guardando con el tiempo. Un backup completo me debe andar por los 20Gb, aunque lo mas importante seran unos 4Gb.<br >
+		El drive de 80Gb es bastante rapido, grabando a un promedio de 3.5Mb/s. Bastante bien para un drive USB, la verdad que me sorprendi&oacute;. Tambien es muy silencioso, apenas se escucha.
+		</p>
+		
+		<h3>12/27 - HD Externo NetDisk USB/Ethernet</h3>
+		<p>
+			<div class="thumb">
+            <a class="c1" href="shots/IMG_4595.JPG"><img src="shots/IMG_4595s.JPG" alt="NetDisk" width="120" height="90" /></a><br />HD NetDisk
+			</div>
+		Una muy buena combinacion para un hard drive externo. Se puede acceder desde un puerto USB 2.0 o a traves de un protocolo propietario sobre Ethernet, sin necesitar de IP o alguna otra configuracion.<br />
+		Desafortunadamente, el puerto USB bajo Fedora dejo de responder. La primera vez conecto bien y dijo que no podia montar el disco por estar formateado en NTFS. Asi que sin tardarme, decidi formatearlo en ext3fs, con el comando mkfs.ext3. No se nego, empezo a formatear, y de a poco mi sistema se fue enlenteciendo de a saltos, hasta que en unos 2 minutos no funcionaba nada. Tuve que resetear a lo guindous. :(<br />
+		El segundo intento fue peor. Esta vez ni siquiera detectaba el drive cuando lo conectaba en el puerto USB. Se murio el USB del drive.<br />
+		La conexion por ethernet fue un tanto mejor. Con alguna dificultad. Ximeta solo tiene drivers para linux en estado alpha, que funcionan muy bien en cuanto a estabilidad, pero solo en dos versiones del kernel para RedHat. La version 2.4.20-8 original que viene con RedHat es la que probe, pese a que la actual es la 2.4.23. El problema es que el modulo viene para ser compilado contra esa version del kernel y no compila con otro. <br />
+		Asi que lo devolv&iacute;. Aunque no tuve una buena experiencia, debo reconocer que <a href="http://www.ximeta.com">Ximeta</a> est&aacute; trabajando para ofrecer drivers para Linux. Kudos para ellos.
+		</p>
+		
+		<h3>09/15 - Que! CDROM drive externo USB 2.0</h3>
+	    <p>Un CD-RW drive externo que anda muy bien. 
+Linux lo detecta al instante y se monta en /media/sr0 sin problemas. 
+El drive es muy rapido y hace uso del USB 2.0 con facilidad. 
+Es silencioso, cosa en que algunos drives internos fallan, pareciendo que la maquina va a levantar vuelo mientras se accede el drive!. <br />
+	<div class="thumb">
+            <a class="c1" href="shots/IMG_4080.JPG"><img src="shots/IMG_4080s.JPG" alt="Caja del Que!" width="120" height="90" /></a><br />En su caja
+	</div>
+	<div class="thumb">
+            <a class="c1" href="shots/IMG_4081.JPG"><img src="shots/IMG_4081s.JPG" alt="Caja del Que!" width="120" height="90" /></a>
+	</div>
+	<div class="thumb">
+            <a class="c1" href="shots/IMG_4082.JPG"><img src="shots/IMG_4082s.JPG" alt="Caja del Que!" width="120" height="90" /></a><br />El Que! USB2.0 en accion
+	</div>
+El dise&ntilde;o es un tanto grande, haciendose muy evidente que es un drive interno con la carcaza de plastico transparente. 
+Usa una fuente externa incluida y el cable USB 2.0, tambien incluido. 
+Tambien trae drivers para Windows, pero como bien sabemos, no hacen falta en Linux. :)
+	</p>
+
+
+            <h3>08/30 - USB JumpDrive de Lexar Media</h3>
+	    <p>
+		Un USB drive de 64mb que funciona bajo Linux, sin drivers ni complicaciones.<br />
+		El drive es USB 1.1, por lo que no es demasiado rapido para transferir datos.</p>
+	    <div class="thumb">
+                    <a class="c1" href="lexar.jpg"><img src="lexar_s.jpg" alt="JumpDrive" width="120" height="96" /></a>
+		</div>
+		<pre style="margin-left: 150px;">$&gt; time cp Pink_Floyd_Dark_side_album.mp3 /media/sda1
+		real	2m45.196s
+		user	0m0.050s
+		sys	0m0.800s
+$&gt; ls -l Pink_Floyd_Dark_side_album.mp3
+-rw-r--r--    1 pcarr    users    41286136 2003-07-28 
+12:27 Pink_Floyd_Dark_side_album.mp3
+		</pre>
+
+	    
+            <h3>01/20 - USB FlashDrive de Butterfly Media</h3>
+	    <p>
+             El drive es muy pequeno, puede usarse como un
+            keychain. El que probe es de 32mb, aunque hay de 64mb y
+            128mb disponibles en el mercado (Fry's).</p>
+             	<div class="thumb">
+                    <a class="c1" href="flash2.jpg"><img src="flash2_s.jpg"
+                         alt="Flashdrive" width="90" height="120" /></a></div>
+             	<div class="thumb">
+                    <a href="flash1.jpg"><img src="flash1_s.jpg"
+                         alt="Flashdrive" width="120" height="90"
+                         border="0" /></a></div>
+             <p>Lo probe en tres distros a las que tengo acceso. La
+            experiencia fue similar en las tres, aunque con algunas
+            diferencias menores.<br />
+             <b>SuSE 8.0</b> fue la mejor, solo fue necesario
+            enchufar el drive en el puerto USB y montarlo con el
+            comando <code>mount
+            /media/sda1</code>.<br />
+             En <b>RedHat 8.0</b>, fue necesario crear el
+            directorio <code>/mnt/sda1</code> y agregar
+            una linea en <code>/etc/fstab</code> como la
+            siguiente:<br />
+             <code>/dev/sda1 /mnt/sda1 auto
+            noauto,user,exec 0 0</code><br />
+             <b>Mandrake 9.0</b> reconocio el drive y solo fue
+            necesario montarlo (como root), en este caso como
+            <code>mount /mnt/removable</code><br />
+            <br />
+             Bueno, como se ve en la foto, este drive fue
+            dise&ntilde;ado para Windows, asi que decidi probarlo
+            en mi laptop, corriendo Windows 2000. Enchufe el drive
+            y lo busque en My Computer como un disco nuevo, pero no
+            estaba. Fui al Control Panel y Add New Hardware. No lo
+            reconocio como Plug &amp; Play. Hasta que no instale el
+            driver que viene en el cdrom con el drive, <b>no
+            funciona bajo Windows</b>.</p>
+             	<div class="thumb">
+                    <a href="flashwin.jpg"><img src="flashwin_s.jpg"
+                         alt="Flashdrive on Win" width="120"
+                         height="90" border="0" /></a><br />
+                     Windows 2000 no detecto el nuevo drive
+                    USB</div>
+             <p>Por si no quedo claro, <i>en Linux no necesit&eacute;
+            instalar nada,</i> solo enchufarlo.<br />
+            <br />
+             Y para los nuevos usuarios de Linux.,
+            <a href="http://www.mandrakeuser.org/docs/troubles/tprincip.html">
+            algo para leer</a>. Cortesia MandrakeUser.org</p>
+             
+            <h3>01/14 - SuSE 8.1 Live Eval sobre un laptop IBM Thinkpad</h3><br />
+	   <p>
+            Instale la misma version evaluacion de SuSE 8.1
+            en el laptop, una IBM ThinkPad &nbsp;1161. Una Pentium
+            III de 450mhz con 128mb de ram; placa de network 3Com
+            PCMCIA; USB; soundcard; mouse PS/2.<br />
+            <img class="thumb" src="suse_logo.png" alt="SuSE" width="60" height="43" />
+             Anduvo todo. Lo unico que tuve que ajustar fue la
+            deteccion automatica de la placa de red. No la detecto
+            como PCI, le tuve que decir que era PCMCIA. Nada
+            mas.<br />
+             Me conecte por el NFS client a mi fileserver sin
+            problemas y copie las imagenes directamente al server,
+            capturadas con <a href="http://www.gimp.org">Gimp</a>
+            (ver abajo).<br />
+		<div class="thumb">
+                    <a href="screen7.jpg"><img src="screen7_s.jpg"
+                         alt="laptop" width="120" height="90" />
+                         </a><br />
+                     Durante la instalacion
+		</div>
+		<div class="thumb">
+                      <a href="screen5.jpg"><img src="screen5_s.jpg"
+                           alt="SuSE" width="120" height="90" />
+                           </a><br />
+                      Asi arranca SuSE 8.1 live-eval.
+		</div>
+		<div class="thumb">
+                    <a href="screen6.jpg"><img src="screen6_s.jpg"
+                         alt="laptop" width="90" height="120" />
+                         </a><br />
+                     ThinkPad running Linux
+		</div>
+             Incluso, debido al filesystem propietario de Microsoft
+            NTFS instalado en el disco duro con Windows 2K, la
+            informacion sobre toda la configuracion no se puede
+            escribir, debido a que NTFS es read-only. Sin embargo,
+            todo funciona perfectamente. Como dicen en ingles:
+            <i>flawless</i>.<br />
+             Go SuSE!<br />
+            </p> 
+            <h3> 01/13 - SuSE Live eval en bullfrog </h3>
+	    <p>
+            Instale en bullfrog la version evaluacion de
+            <a href="http://www.suse.com">SuSE 8.1</a>. Se
+            encuentra disponible para bajar en formato .iso en el
+            ftp de
+            <a href="ftp://ftp.suse.com/pub/suse/i386">SuSE</a>.<br />
+
+             Esta version no necesita formatear el disco rigido y
+            se instala muy facilmente (incluso sobre windows).
+            Corre un poco lento debido a que se ejecuta
+            completamente desde el cdrom.<br />
+             Probe instalar la camara digital, una Canon PowerShot
+            S110. La conecte al puerto USB, la encendi y al
+            instante un icono de "Camara Digital" aparecio en el
+            desktop. Click y las fotos de la camara aparecieron en
+            una ventana.<br />
+             Todo esto con solo UN CD de evaluacion y SIN NINGUN
+            SOFTWARE EXTRA.<br />
+             Tambien detecto el USB Sony Clie S320 PDA, pero no
+            viene ningun software para bajar la informacion
+            (hotlink).<br />
+             Al scanner tambien lo detecto pero no tuvo lugar para
+            instalar el package SANE requerido.</p>
+
+	    <div class="thumb">
+             <a href="screen3.jpg"><img src="screen3_s.jpg"
+            alt="Yast2 hardware" width="120" height="90" /></a><br />
+             Gimp 1.2/Menues/Modules</div>
+
+	     <div class="thumb">
+             <a href="screen4.jpg"><img src="screen4_s.jpg"
+            alt="SuSE" width="120" height="90" /></a><br />
+             Yast2/Hardware detection</div>
+
+	    <p>
+             Estas imagenes fueron capturadas con Gimp 1.2 incluido
+            en la misma distro y transferidos por nfs al
+            server.<br />
+             Repito: Todo esto con solo UN CD de evaluacion y SIN
+            NINGUN SOFTWARE EXTRA.</p>
+
