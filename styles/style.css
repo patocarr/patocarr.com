@@ -148,8 +148,8 @@ visibility:hidden;
 #entries {
   float: left;
   height: 100%;
-  width: 65%;
   margin: 2em 3% 2em 3%;
+  width: 70%;
   font-size: 100%;
   color: rgba(0, 0, 0, 0.9);
 }
