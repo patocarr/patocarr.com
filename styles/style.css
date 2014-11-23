@@ -101,7 +101,7 @@ visibility:hidden;
 
 /*
 ----------------------------------------*/
-#sidebar {
+.sidebar {
   float: right;
   width: 20%;
   clear: right;
@@ -111,16 +111,16 @@ visibility:hidden;
   -moz-border-radius: 5px;
   color: rgba(0, 0, 0, 0.8);
 }
-#sidebar dl {
+.sidebar dl {
   padding: 0 0 0.5em 0;
 }
-#sidebar dt {
+.sidebar dt {
   font-size: 110%;
   padding: 0 .5em;
   margin: 0.5em 0 0.5em 0;
   background: #d0d0d0;
 }
-#sidebar dd {
+.sidebar dd {
   padding: 0 .7em;
   margin-bottom: 0.1em;
 }
@@ -160,13 +160,11 @@ visibility:hidden;
   margin: 0 0 0 0;
 }
 #entries h2 {
-  text-decoration: bold;
   font-family: Georgia, serif;
   font-size: 130%;
   margin: 0.5em 0 0 0;
 }
 #entries h3 {
-  text-decoration: bold;
   font-family: Georgia, serif;
   font-size: 120%;
   margin: 1em 0 0 0;

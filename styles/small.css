@@ -10,9 +10,6 @@ body {
 #wrap {
   background: url(../images/noise-tile.gif) repeat;
   font-size: 1.3em;
-/*  max-width: 900px;
-  margin: 0 auto;
-*/
 }
 #wrap a {
   color: #214d80;
@@ -32,18 +29,11 @@ body {
 }
 #logo a {
 margin-top: -20px;
-//float: left;
-//box-shadow: 2px 2px 2px #202020;
-//-webkit-box-shadow: 2px 2px 2px #202020;
-//-moz-box-shadow: 2px 2px 2px #202020;
 }
 #slogan {
-//float: right;
   font-size: 1em;
   padding: 1em 0 0 0;
-//margin-top: 40px;
   margin-right: 0;
-//color: rgba(255, 255, 255, 0.8);
   width: 70%;
 }
 
@@ -67,10 +57,10 @@ margin-top: -20px;
 }
 #menu a:hover {
   text-decoration: none;
-	background: url(../images/img02.gif) repeat-x left bottom;
+	background: url(/images/img02.gif) repeat-x left bottom;
 }
 #menu .active a {
-	background: url(../images/img02.gif) repeat-x left bottom;
+	background: url(/images/img02.gif) repeat-x left bottom;
 }
 
 /*
@@ -97,7 +87,7 @@ visibility:hidden;
 
 /*
 ----------------------------------------*/
-#sidebar {
+.sidebar {
   float: none;
   width: 90%;
   margin: 2em 5% 3em 5%;
@@ -105,36 +95,18 @@ visibility:hidden;
   -moz-border-radius: 5px;
   color: rgba(0, 0, 0, 0.8);
 }
-#sidebar dl {
+.sidebar dl {
   padding: 0 0 0.5em 0;
 }
-#sidebar dt {
+.sidebar dt {
   font-size: 100%;
   padding: .5em 1em .5em 1em;
   margin: 0 0 0.5em 0;
   background: #d0d0d0;
 }
-#sidebar dd {
+.sidebar dd {
   padding: 0 1.5em;
 }
-
-/*
-----------------------------------------*/
-//#content {
-//  background: url(../images/burn.png) repeat-x top;
-//  color: rgba(0, 0, 0, 0.8);
-//}
-//
-//.quote {
-//  background: url(../images/box-shade.png) no-repeat bottom right;
-//  padding-bottom: 20px;
-//  margin-top: 1em;
-//}
-//.quote-inner {
-//  background: rgba(255, 255, 255, 0.8);
-//  /*border: 1px solid #d0d0d0;*/
-//  padding: 1em;
-//}
 
 /*
 ----------------------------------------*/
@@ -146,34 +118,6 @@ visibility:hidden;
   font-size: 100%;
   color: rgba(0, 0, 0, 0.9);
 }
-//#entries h1 {
-//  font-family: sans-serif;
-//  font-size: 160%;
-//  margin: 0 0 0 0;
-//}
-//#entries h2 {
-//  text-decoration: bold;
-//  font-family: Georgia, serif;
-//  font-size: 130%;
-//  margin: 0.5em 0 0 0;
-//}
-//#entries h3 {
-//  text-decoration: bold;
-//  font-family: Georgia, serif;
-//  font-size: 120%;
-//  margin: 1em 0 0 0;
-//}
-//#entries h4 {
-//  font-size: 80%;
-//  color: rgba(0, 0, 0, 0.3);
-//}
-//#entries p {
-//  padding-top: 1em;
-//}
-//#entries #text {
-//  background: url(../images/img05.gif) no-repeat;
-//  float: left;
-//}
 
 /*
 ----------------------------------------*/
