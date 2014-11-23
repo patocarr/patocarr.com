@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2014-11-11 23:43:41
-categories: jekyll update
+categories: blog
 ---
 This is my first blog post taken from the Jekyll installation. Jekyll is a static site generator that is blog-aware and makes it real easy to convert text to static html pages through the use of a templating engine.
 
