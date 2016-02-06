@@ -144,6 +144,11 @@ visibility:hidden;
   padding: 1em;
 }
 
+#content pre{
+  margin-top: 1em;
+  background: #e0e0e0;
+  padding: .5em;
+}
 /*
 ----------------------------------------*/
 #entries {
