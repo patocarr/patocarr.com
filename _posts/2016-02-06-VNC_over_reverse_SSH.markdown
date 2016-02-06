@@ -32,4 +32,31 @@ Turns out, the reverse port is transparent in the other direction, so port forwa
 This would open port 5901 on my homepc, tunneled over the reverse SSH on port 7000 back to the workpc. Of course, the workuser password is the remote work PC in this case, even though the host is localhost. Then, simply opening the VNC viewer on port localhost:5901 would display my work PC desktop in all its glory.
 
 
+Real world case
+---------------
+
+The case above assumes the homepc is always on and accessible from the Internet, which while possible, it's not a very safe and recommended way to go. In my case, I have a Raspberry Pi that I keep always on, consuming less than 5W and acting as a gateway to my NAT home network. The Pi runs a no-ip service that keeps its dynamic IP findable.
+And at work, my workstation runs Windows and while I could use Putty to set up the reverse SSH connection, doing it from a Linux server makes it more resilient to work unattended.
+So the final configuration ends up being:
+
+    workpc -- linuxhost || ooooooooo || pi -- homepc
+
+The reverse SSH originates on linuxhost over Internet to the Pi:
+
+    linuxhost$ ssh -fN -R 7000:localhost:22 piuser@homeip
+
+Then from my homepc, open a SSH connection to the Pi forwarding a VNC port:
+
+    homepc$ ssh -L 5901:localhost:5901 piuser@piip
+
+Finally, the Pi opens a SSH connection to the Linux host, forwarding the VNC port to my workpc, all through the reverse SSH tunnel:
+
+    pi$ ssh -L 5901:workpc:5900 workuser@localhost -p 7000
+
+Then from the homepc, simply opening a VNC viewer gets the work desktop:
+
+    homepc$ vncviewer localhost:1
+
+
+
 
