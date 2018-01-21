@@ -6,6 +6,8 @@ categories: blog
 tags: Fedora jekyll blog ruby
 ---
 
+Installing the static site generator jekyll on Fedora should be a simple matter, but as usual, there's always a few things that are needed.
+
 Install ruby, ruby-devel, rubygems
     $ sudo dnf install ruby ruby-devel
 
