@@ -1,18 +1,26 @@
-<header>
-    <div id="header">
-      <div id="logo" class="group">
-        <a href="{{ site.baseurl }}/"><img src="/images/pat-tick.png" alt="P@" /></a>
-        <p id="slogan">A Journey Through The Technology Stack</p>
+    <nav id="header" class="navbar">
+
+      <div class="row">
+        <div id="logo" class="navbar-brand col-sm-6">
+          <a href="{{ site.baseurl }}/"><img src="/images/pat-tick.png" alt="P@" /></a>
+        </div>
+        <div class="navbar-text hidden-xs-down navbar-collapse col-sm-5">
+          <p id="slogan">A Journey Through The Technology Stack</p>
+        </div>
+
+        <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#navigation">
+          &#9776;
+        </button>
       </div>
-      <div id="menu" class="group">
-        <ul>
-          <li class=""><a href="/">home</a></li>
-          <li class=""><a href="/about">about</a></li>
-          <li class=""><a href="/blog">blog</a></li>
-          <li class=""><a href="/picsmenu">gallery</a></li>
-          <li class=""><a href="/linux">Linux</a></li>
+
+      <div class="collapse navbar-collapse navbar-toggleable-xs" id="menu">
+        <ul class="navbar-nav nav-pills" id="menu">
+          <li class="nav-item"><a class="nav-link" href="/">home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">about</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blog">blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="/picsmenu">gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="/linux">Linux</a></li>
         </ul>
       </div>
-    </div>
-</header>
 
+    </nav>

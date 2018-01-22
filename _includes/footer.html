@@ -1,5 +1,6 @@
 <footer>
-<div id="extra">
+<div class="footer" id="extra">
+  <div class="container hidden-sm-down"
  <ul>
      <li>
            <a href="http://www.projecthoneypot.org"> <img src="/images/project_honey_pot_button.gif" height="31" width="88" alt="Stop Spam Harvesters, Join Project Honey Pot"></a>
@@ -23,10 +24,14 @@
      </li>
      <li>
      <!-- Project HoneyPot - Spambot: Come and get this address! -->
-     <a style="display:none" href="http://patocarr.com/cgi-bin/working.cgi">very clever idea</a> 
+     <a style="display:none" href="http://patocarr.com/cgi-bin/working.cgi">very clever idea</a>
      </li>
  </ul>
- <p id="legal">Copyright &copy; 1997-2014 patocarr.com.</p>
+</div>
+	<script src="{{'/bower_components/jquery/dist/jquery.min.js' | prepend: site.baseurl}}"></script>
+	<script src="{{'/bower_components/tether/dist/tether.min.js | prepend: site.baseurl}}"></script>
+	<script src="{{'/bower_components/bootstrap/dist/js/bootstrap.min.js' | prepend: site.baseurl}}"></script>
+
+ <p id="legal">Copyright &copy; 1997-2018 patocarr.com.</p>
 </div>
 </footer>
-

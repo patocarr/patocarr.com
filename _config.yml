@@ -11,3 +11,9 @@ url: "http://patocarr.com" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 encoding: utf-8
+
+sass:
+    load_paths:
+        - _sass
+        - bower_components
+

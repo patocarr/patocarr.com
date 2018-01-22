@@ -1,0 +1,160 @@
+---
+---
+
+$font-size-h2: 1.5em;
+$font-size-h4: 0.7em;
+$brand-primary:             #024177;
+
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+
+#header {
+  background: #FFFFFF url(../images/bg-kihei.png) repeat scroll left top;
+  padding: 0;
+  padding-bottom: inherit;
+  margin-bottom: 1em;
+}
+#wrap {
+  background: url(../images/noise-tile.gif) repeat;
+  padding : 0;
+}
+
+#logo {
+  margin: 0;
+  padding-left: 3em;
+  padding-top: 0px;
+  padding-bottom: 0.5em;
+}
+#logo a {
+  float: left;
+  box-shadow: 2px 2px 2px #202020;
+  -webkit-box-shadow: 2px 2px 2px #202020;
+  -moz-box-shadow: 2px 2px 2px #202020;
+}
+#slogan {
+  float: right;
+#  font-size: 1.6em;
+  padding: 0.4em 0 0.4em 0.4em;
+  margin-right: 5%;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#menu {
+  margin: 0;
+  background: rgba(50, 50, 50, .3);
+}
+
+#menu a:hover {
+  text-decoration: none;
+	background: url(../images/img02.gif) repeat-x left bottom;
+}
+#menu li {
+  text-decoration: none;
+  list-style: none;
+}
+#menu li a {
+  color: #d0d0d0;
+  text-decoration: none;
+}
+
+/*
+#menu {
+  background: #323232;
+  background: rgba(50, 50, 50, .7);
+}
+#menu ul {
+  margin-left: 3em;
+  padding: 0.5em 0;
+  list-style: none;
+  text-transform: uppercase;
+  float: left;
+}
+#menu a {
+}
+#menu li {
+  display: inline;
+  padding: 1em 1em 1em 0em;
+}
+#menu li a {
+  color: #d0d0d0;
+  padding-bottom: 0.5em;
+  text-decoration: none;
+}
+#menu a:hover {
+  text-decoration: none;
+	background: url(../images/img02.gif) repeat-x left bottom;
+}
+#menu .active a {
+	background: url(../images/img02.gif) repeat-x left bottom;
+}
+----------------------------------------*/
+
+/*
+----------------------------------------*/
+.sidebar {
+  #float: right;
+  #width: 20%;
+  #clear: right;
+  #margin-top: 2em; margin-right: 3%;
+  #margin-bottom: 1em;
+  #border: 2px solid #d0d0d0;
+  -moz-border-radius: 5px;
+  text-decoration-color: rgba(0, 0, 0, 0.8);
+}
+.sidebar dl {
+  padding: 0 0 0.5em 0;
+}
+.sidebar dt {
+  font-size: 110%;
+  padding: 0 .5em;
+  margin: 0.5em 0 0.5em 0;
+  background: $gray-light;
+  #background: #d0d0d0;
+}
+.sidebar dd {
+  padding: 0 .7em;
+  margin-bottom: 0.1em;
+}
+
+.quote {
+  background: url(../images/box-shade.png) no-repeat bottom right;
+  padding-bottom: 20px;
+  margin-top: 1em;
+}
+.quote-inner {
+  background: rgba(255, 255, 255, 0.8);
+  /*border: 1px solid #d0d0d0;*/
+  padding: 1em;
+}
+
+
+/*
+----------------------------------------*/
+#extra {
+  padding: 20px 2em;
+  clear: both;
+  background: rgba(155, 152, 109, 0.16);
+  background: url(../images/seawater.png) repeat;
+  #height: 77px;
+}
+#extra ul {
+  list-style: none;
+  text-align: center;
+}
+#extra li {
+  list-style: none;
+  padding-right: 2em;
+  float: left;
+}
+
+#legal {
+  #clear: both;
+  #padding: 30px 0 0 0;
+  margin: 0;
+  font-size: 0.8em;
+  text-align: center;
+  #color: #375C69;
+}
+#legal p {
+  color: #476B77;
+}
