@@ -1,21 +1,22 @@
 ---
 ---
 
-$font-size-h2: 1.5em;
-$font-size-h4: 0.7em;
+$font-size-h2: 1.5rem;
+$font-size-h3: 1.2rem;
+$font-size-h4: 0.7rem;
 $brand-primary:             #024177;
 
 @import "variables";
 @import "bootstrap/scss/bootstrap";
 
 #header {
-  background: #FFFFFF url(../images/bg-kihei.png) repeat scroll left top;
+  background: #FFFFFF url(/images/bg-kihei.png) repeat scroll left top;
   padding: 0;
   padding-bottom: inherit;
   margin-bottom: 1em;
 }
 #wrap {
-  background: url(../images/noise-tile.gif) repeat;
+  background: url(/images/noise-tile.gif) repeat;
   padding : 0;
 }
 
@@ -46,7 +47,7 @@ $brand-primary:             #024177;
 
 #menu a:hover {
   text-decoration: none;
-	background: url(../images/img02.gif) repeat-x left bottom;
+	background: url(/images/img02.gif) repeat-x left bottom;
 }
 #menu li {
   text-decoration: none;
@@ -89,6 +90,11 @@ $brand-primary:             #024177;
 }
 ----------------------------------------*/
 
+.highlighter-rouge {
+    background-color: #c5c5c566;
+    font-size: 90%;
+}
+
 /*
 ----------------------------------------*/
 .sidebar {
@@ -105,6 +111,7 @@ $brand-primary:             #024177;
   padding: 0 0 0.5em 0;
 }
 .sidebar dt {
+  color: white;
   font-size: 110%;
   padding: 0 .5em;
   margin: 0.5em 0 0.5em 0;
