@@ -4,11 +4,28 @@ layout: default
 
       <h2>Hola - Hello - Ola - Bonjour - Ciao - Namaste - Parev - Ni hao - Konichiwa</h2>
       <h4 id="time">Posted on November 22th, 2014</h4>
-<!--     <div class="quote">
-<p class="quote-inner">Nunc diam. Cras tempor ligula at dui. Aenean ornare velit at nunc. In vitae tortor aliquet purus porttitor gravida. Nullam massa dui, venenatis lobortis, interdum in, scelerisque. abs. Aunque por sobre todo, es un <i>labor of love</i> dedicado a mis seres queridos y amigos.</p>
-      </div> -->
+
       <p>Hi! This is my personal corner on the web. The main sections include pictures and a geeky collection of experiences while dealing with technology.</p>
       <p>Buenas! Este es mi rinc&oacute;n en el web. Est&aacute; pensado para mantenerme en contacto con seres queridos y amigos; sobre todo para tener un lugar donde depositar conocimientos, experiencias y cosas similares en las que me encuentro envuelto. Las secciones m&aacute;s importantes son las <a href="/picsmenu">fotos</a> y mi hobby preferido: el sistema operativo <a href="/linux">Linux</a>.
+
+  <h2 class="page-heading">Blog posts</h2>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <h3>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h3>
+        <h4 class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</h4>
+        {{ post.excerpt }}
+      </li>
+      <h4>
+          {% for tags in post.tags %}
+          #{{ tags }}
+          {% endfor %} 
+      </h4>
+    {% endfor %}
+  </ul>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
