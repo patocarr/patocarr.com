@@ -10,7 +10,7 @@ It's a personal site dedicated to sharing stories, events, trips and an assorted
 
 *Who are you?*
 
-My name is Patricio Carr. I'm more or less 45 years old, married with two beautiful offspring. I work in high technology for a medium-sized company, specializing in high performance data acquisition computer boards as a digital design engineer. Before this, I worked for several companies in a wide range of technical duties, from management system software, web design, firmware developer, hardware verification engineer and printed circuit board designer.
+My name is Patricio Carr. I'm more or less 45 years old, married with two beautiful offspring. I work in high technology as a consultant for several companies, specializing in high performance data acquisition computer boards as a digital design engineer. Before this, I worked for several companies in a wide range of technical duties, from management system software, web design, firmware developer, hardware verification engineer and printed circuit board designer.
 
 *Digital life*
 
