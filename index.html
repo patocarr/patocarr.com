@@ -19,11 +19,7 @@ layout: default
         <h4 class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</h4>
         {{ post.excerpt }}
       </li>
-      <h4>
-          {% for tags in post.tags %}
-          #{{ tags }}
-          {% endfor %} 
-      </h4>
+      <h4> Tags: {% for tags in post.tags %} #{{ tags }} {% endfor %} </h4>
     {% endfor %}
   </ul>
 
