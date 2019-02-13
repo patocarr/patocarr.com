@@ -9,7 +9,8 @@ Recently decided to drop my Vonage VoIP service and just get a VoIP phone. I can
 
 Researching VoIP phones, I came across OBiTalk and the extensive features convinced me to try it. The OBi202 has WAN/LAN ports, 2 phone jacks and a USB port to expand storage. Software features include support for Google Voice and many useful VOIP configuration options.
 
-<a target="_blank"  href="https://www.amazon.com/gp/product/B007D930YO/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B007D930YO&linkCode=as2&tag=patocarr-20&linkId=00599e7c8d765d81eb8b463d1a8c6993"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B007D930YO&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=patocarr-20" ></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=patocarr-20&l=am2&o=1&a=B007D930YO" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=patocarr-20&marketplace=amazon&region=US&placement=B007D930YO&asins=B007D930YO&linkId=06ca94cc6c47bd8e54c8359123637e4f&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
 
 Time to install it.
 

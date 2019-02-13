@@ -11,9 +11,10 @@ Over the years I've been adding external hard drives to the collection of device
 
 I've tried playing with the <a href="https://amzn.to/2wySHqn">Raspberry Pi</a> with an attached <a href="https://amzn.to/2N36GxV">1TB 3.5" external hard drive</a> with good results, using OwnCloud but found it unusably slow.
 
-So got a <a href="https://amzn.to/2NwKFEy">Seagate NAS 2-Bay</a> unit.
+So got a Seagate NAS 2-Bay unit like the one below.
 
-<a target="_blank"  href="https://www.amazon.com/gp/product/B00LM6LOG0/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00LM6LOG0&linkCode=as2&tag=patocarr-20&linkId=7c2986285a5cdde981f44358c3028554"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B00LM6LOG0&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=patocarr-20" ></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=patocarr-20&l=am2&o=1&a=B00LM6LOG0" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=patocarr-20&marketplace=amazon&region=US&placement=B00LM6LOG0&asins=B00LM6LOG0&linkId=5497bf1b003f93c318de77b0dc172178&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
 
 All looks good until ... the setup. The first time you log in, it *should* ask to set the initial user and password for the administrator, but in my case, it's just happily asking to *enter* my credentials. Except that I never had a chance to set them!
 
@@ -35,6 +36,6 @@ Finally, it asked about the initial username and password!
 
 [Update 8/29/2018]
 
-The <a href="https://amzn.to/2NwKFEy">Seagate NAS 2-Bay</a> is still performing nominally after more than 3 years being online and used every day. Great purchase! I'm getting ready to replace its <a href="https://amzn.to/2MXe3af">hard drives</a> and have had such good luck with Seagate that will continue buying from them.
+The <a href="https://amzn.to/2NwKFEy">Seagate NAS 2-Bay</a> is still performing nominally after more than 4 years being online and used every day. Great purchase! I'm getting ready to replace its <a href="https://amzn.to/2MXe3af">hard drives</a> and have had such good luck with Seagate that will continue buying from them.
 <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=48&l=ur1&category=computers_accesories&banner=038B3BT3V0V7G44XKF82&f=ifr&linkID=d17d343e85121b713e7c9c4525bb5582&t=patocarr-20&tracking_id=patocarr-20" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 
