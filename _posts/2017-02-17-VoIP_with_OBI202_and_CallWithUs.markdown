@@ -9,14 +9,11 @@ Recently decided to drop my Vonage VoIP service and just get a VoIP phone. I can
 
 Researching VoIP phones, I came across OBiTalk and the extensive features convinced me to try it. The OBi202 has WAN/LAN ports, 2 phone jacks and a USB port to expand storage. Software features include support for Google Voice and many useful VOIP configuration options.
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=patocarr-20&marketplace=amazon&region=US&placement=B007D930YO&asins=B007D930YO&linkId=06ca94cc6c47bd8e54c8359123637e4f&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
-</iframe>
-
 Time to install it.
 
 I was reluctant to set up an account with them, as being the geek I am, thought I could get away with it. I did... and didn't.
 
-The set up was simple. Hook up the Internet port to the <a href="https://amzn.to/2PfzeSm">router</a>, plug the phone jack and power it up. Calling \*\*\* on the phone, a voice message reads the IP assigned to it by the router (ie. DHCP). Neat detail.
+The set up was simple. Hook up the Internet port to the router, plug the phone jack and power it up. Calling \*\*\* on the phone, a voice message reads the IP assigned to it by the DHCP. Neat detail.
 
 Opened browser, entered IP... and a 404 error. Turns out, to talk to the configuration screen, the PC has to be on the LAN ethernet jack, not from another computer on the router.
 

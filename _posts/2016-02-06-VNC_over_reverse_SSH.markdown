@@ -35,7 +35,7 @@ This would open port 5901 on my homepc, tunneled over the reverse SSH on port 70
 Real world case
 ---------------
 
-The case above assumes the homepc is always on and accessible from the Internet, which while possible, it's not a very safe and recommended way to go. In my case, I have a <a href="https://amzn.to/2wySHqn">Raspberry Pi</a> that I keep always on, consuming less than 5W and acting as a gateway to my NAT home network. The Pi runs a no-ip service that keeps its dynamic IP findable.
+The case above assumes the homepc is always on and accessible from the Internet, which while possible, it's not a very safe and recommended way to go. In my case, I have a Raspberry Pi that I keep always on, consuming less than 5W and acting as a gateway to my NAT home network. The Pi runs a no-ip service that keeps its dynamic IP findable.
 And at work, my workstation runs Windows and while I could use Putty to set up the reverse SSH connection, doing it from a Linux server makes it more resilient to work unattended.
 So the final configuration ends up being:
 
